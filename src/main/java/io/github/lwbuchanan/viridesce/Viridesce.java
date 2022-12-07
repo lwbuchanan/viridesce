@@ -1,4 +1,4 @@
-package com.github.lwbuchanan.viridesce;
+package io.github.lwbuchanan.viridesce;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
