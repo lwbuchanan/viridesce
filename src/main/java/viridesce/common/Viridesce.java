@@ -1,4 +1,4 @@
-package io.github.lwbuchanan.viridesce;
+package viridesce.common;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -33,6 +33,7 @@ public class Viridesce
     public static final String MODID = "viridesce";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
+    
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
