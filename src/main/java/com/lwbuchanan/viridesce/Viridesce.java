@@ -1,4 +1,4 @@
-package io.github.lwbuchanan;
+package com.lwbuchanan.viridesce;
 
 import net.fabricmc.api.ModInitializer;
 

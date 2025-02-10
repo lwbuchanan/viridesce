@@ -1,4 +1,4 @@
-package io.github.lwbuchanan.mixin;
+package com.lwbuchanan.viridesce.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"io.github.lwbuchanan.Viridesce"
+			"com.lwbuchanan.viridesce.Viridesce"
 		],
 		"client": [
-			"io.github.lwbuchanan.ViridesceClient"
+			"com.lwbuchanan.viridesce.ViridesceClient"
 		]
 	},
 	"mixins": [

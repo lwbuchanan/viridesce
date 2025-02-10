@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "io.github.lwbuchanan.mixin.client",
+	"package": "com.lwbuchanan.viridesce.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
 		"ExampleClientMixin"
