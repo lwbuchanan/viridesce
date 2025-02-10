@@ -19,6 +19,7 @@ public class Viridesce implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		ModItems.initialize();
 		LOGGER.info("Hello Fabric world!");
 	}
 }

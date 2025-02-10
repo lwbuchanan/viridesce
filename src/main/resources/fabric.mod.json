@@ -3,13 +3,13 @@
 	"id": "viridesce",
 	"version": "${version}",
 	"name": "Viridesce",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Plants 'n stuff",
 	"authors": [
-		"Me!"
+		"lwbuchanan (Luke)"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/lwbuchanan/viridesce"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/viridesce/icon.png",
@@ -36,6 +36,6 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+
 	}
 }
