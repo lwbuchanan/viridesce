@@ -1,13 +1,16 @@
 package com.lwbuchanan.viridesce;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
@@ -47,25 +50,31 @@ public class ModItems {
             BREWED_COFFEE_KEY
     );
 
+    public static final RegistryKey<ItemGroup> VIRIDESCE_ITEM_GROUP_KEY =
+            RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(Viridesce.MOD_ID, "item_group"));
+    public static final ItemGroup VIRIDESCE_ITEM_GROUP = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModItems.ROASTED_COFFEE))
+            .displayName(Text.translatable("itemGroup.viridesce"))
+            .build();
+
     public static Item register(Item item, RegistryKey<Item> registryKey) {
        Item registeredItem = Registry.register(Registries.ITEM, registryKey.getValue(), item);
        return registeredItem;
     }
 
     public static void initialize() {
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                .register((itemGroup) -> itemGroup.add(COFFEE_GROUNDS));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                .register((itemGroup) -> itemGroup.add(GREEN_COFFEE));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                .register((itemGroup) -> itemGroup.add(ROASTED_COFFEE));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                .register((itemGroup) -> itemGroup.add(BREWED_COFFEE));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                .register((itemGroup) -> itemGroup.add(ARABICA));
         CompostingChanceRegistry.INSTANCE.add(COFFEE_GROUNDS, 0.9f);
         CompostingChanceRegistry.INSTANCE.add(ROASTED_COFFEE, 0.7f);
         CompostingChanceRegistry.INSTANCE.add(GREEN_COFFEE, 0.3f);
+
+        Registry.register(Registries.ITEM_GROUP, VIRIDESCE_ITEM_GROUP_KEY, VIRIDESCE_ITEM_GROUP);
+        ItemGroupEvents.modifyEntriesEvent(VIRIDESCE_ITEM_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(ModItems.GREEN_COFFEE);
+            itemGroup.add(ModItems.ROASTED_COFFEE);
+            itemGroup.add(ModItems.BREWED_COFFEE);
+            itemGroup.add(ModItems.COFFEE_GROUNDS);
+            itemGroup.add(ModItems.ARABICA);
+        });
     }
 
 

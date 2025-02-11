@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "viridesce:roasted_coffee"
+    },
+    {
+      "item": "viridesce:roasted_coffee"
+    },
+    {
+      "item": "viridesce:roasted_coffee"
+    },
+    {
+      "item": "viridesce:roasted_coffee"
+    }
+  ],
+  "result": {
+    "id": "viridesce:coffee_grounds",
+    "count": 1
+  }
+}
